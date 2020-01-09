@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Android Memory Game</string>
+    <string name="bundle_grid_size">selectedSize</string>
+    <string name="bundle_card_array">cardArrayList</string>
+    <string name="bundle_settings">settings</string>
+    <string name="bundle_game_record">gameRecord</string>
+    <array name="grid_sizes">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Big</item>
+    </array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/mainActivity">
+
+    <fragment android:id="@+id/gameSettings" android:name="com.example.androidmemorygame.ui.SettingsFragment"
+              android:label="GameSettings"
+    tools:layout="@layout/fragment_settings"/>
+    <fragment android:id="@+id/memoryGame" android:name="com.example.androidmemorygame.ui.MemoryGameFragment"
+              android:label="MemoryGame"
+    tools:layout="@layout/fragment_game"/>
+    <activity android:id="@+id/mainActivity" android:name="com.example.androidmemorygame.MainActivity"
+              android:label="activity_main" tools:layout="@layout/activity_main">
+    </activity>
+    <fragment android:id="@+id/mainScreen"
+              android:name="com.example.androidmemorygame.ui.MainScreenFragment"
+              android:label="MainScreen"
+    tools:layout="@layout/fragment_main_screen"/>
+    <fragment android:id="@+id/finishedGameFragment" android:name="com.example.androidmemorygame.ui.FinishedGameFragment"
+              android:label="FinishedGameFragment"
+    tools:layout="@layout/fragment_finished_game"/>
+</navigation>

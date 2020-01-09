@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+            android:text="CONGRATS! YOU'VE WON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView4" android:gravity="center"
+            android:layout_alignParentTop="true" app:fontFamily="@font/boogaloo"
+            android:textColor="@android:color/black" android:textSize="24sp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_below="@id/textView4" android:id="@+id/my_score_layout">
+        <TextView
+                android:text="Your score:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView5" android:paddingLeft="10dp"
+                android:textStyle="bold" app:fontFamily="@font/boogaloo"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/statistics_score" android:layout_weight="1"
+                android:paddingLeft="5dp" android:paddingRight="10dp"
+                android:textColor="@color/design_default_color_primary_dark"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/statistics_time" android:layout_weight="1"
+                android:paddingRight="10dp" android:textColor="@color/colorAccent"/>
+    </LinearLayout>
+    <TextView
+            android:text="STATISTICS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView10" android:paddingLeft="10dp"
+            android:paddingRight="10dp" android:gravity="center"
+            android:paddingTop="10dp"
+            android:layout_below="@id/my_score_layout" app:fontFamily="@font/boogaloo"
+            android:textColor="@android:color/black" android:textSize="24sp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:paddingTop="10dp" android:paddingBottom="10dp"
+            android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_below="@id/textView10"
+            android:id="@+id/pairs_layout">
+        <TextView
+                android:text="Number of pairs:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView8"
+                style="@style/Base.DialogWindowTitle.AppCompat" app:fontFamily="@font/boogaloo"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/statistics_category" android:layout_weight="1"
+                style="@style/Base.TextAppearance.AppCompat.SearchResult.Subtitle" android:paddingLeft="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:paddingLeft="10dp" android:paddingRight="10dp"
+            android:paddingBottom="10dp" android:layout_below="@id/pairs_layout" android:id="@+id/speed_layout">
+        <TextView
+                android:text="Speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView9"
+                style="@style/Base.DialogWindowTitle.AppCompat" app:fontFamily="@font/boogaloo"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/statistics_speed" android:layout_weight="1"
+                style="@style/Base.TextAppearance.AppCompat.SearchResult.Subtitle" android:paddingLeft="10dp"/>
+    </LinearLayout>
+    <com.example.androidmemorygame.ui.NotScrollableRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/statistics_recyclerview" android:layout_below="@id/speed_layout"/>
+    <Button
+            android:text="RESTART"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/restart_button"
+            android:layout_alignParentBottom="true" style="@style/Widget.AppCompat.Button.Colored"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@android:color/white"
+            android:background="@color/colorPrimary" android:textStyle="bold"/>
+</RelativeLayout>

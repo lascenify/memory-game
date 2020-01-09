@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+            android:text="SETTINGS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView11" android:gravity="center"
+            android:textSize="36sp" android:layout_alignParentTop="true" app:fontFamily="@font/boogaloo"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:paddingBottom="100dp"
+            android:layout_centerInParent="true">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:paddingRight="10dp" android:layout_alignParentLeft="true"
+                android:layout_centerVertical="false" android:paddingLeft="60dp" android:id="@+id/grid_size_layout"
+                android:layout_alignTop="@id/speed_layout">
+            <TextView
+                    android:text="Grid size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView2"
+                    style="@style/Base.TextAppearance.AppCompat.Title"/>
+            <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/grid_size_spinner"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/grid_sizes"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_centerVertical="false"
+                android:layout_alignParentRight="true" android:paddingRight="60dp" android:id="@+id/speed_layout">
+            <TextView
+                    android:text="Speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/textView"
+                    style="@style/Base.TextAppearance.AppCompat.Title"/>
+            <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:id="@+id/difficulty_radiogroup"
+                    android:checkedButton="@id/easy_radiobutton">
+                <RadioButton
+                        android:text="Easy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/easy_radiobutton"/>
+                <RadioButton
+                        android:text="Normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/normal_radiobutton"/>
+                <RadioButton
+                        android:text="Hard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/hard_radiobutton"/>
+            </RadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
+    <Button
+            android:text="START GAME"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/start_game_button"
+            android:layout_alignParentBottom="true" style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@color/colorPrimary" android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@android:color/white"/>
+
+</RelativeLayout>

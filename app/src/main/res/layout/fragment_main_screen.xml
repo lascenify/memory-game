@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView" android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark"/>
+    <TextView
+            android:text="MEMORY GAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textColor="@android:color/white"
+            android:layout_above="@id/init_button" android:layout_centerHorizontal="true" android:textSize="50sp"
+            app:fontFamily="@font/boogaloo"/>
+    <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp" android:id="@+id/init_button"
+            android:background="@drawable/ic_arrow_forward_white_24dp"
+            android:layout_centerInParent="true"/>
+</RelativeLayout>
