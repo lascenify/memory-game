@@ -1,14 +1,18 @@
 package com.example.androidmemorygame.ui
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.provider.Settings
+import android.util.JsonReader
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.Spinner
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.androidmemorygame.R
 import com.example.androidmemorygame.data.GameSettings
@@ -64,12 +68,24 @@ class SettingsFragment : Fragment(){
             val jsonReader = JSONReader(context!!, gridSize)
             val speed = getSpeedFromSelectedRadioButtonId(checkedRadioButtonId)!!
 
-            val bundle = Bundle()
-            val settings = GameSettings(speed, gridSize)
-            bundle.putParcelable(getString(R.string.bundle_settings), settings)
-            bundle.putParcelableArrayList(getString(R.string.bundle_card_array), jsonReader.memoryCardList)
+            val memoryCardList = jsonReader.memoryCardList
+            if (memoryCardList.isNullOrEmpty()){
+                val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(context!!)
+                    .setPositiveButton("ok", DialogInterface.OnClickListener { dialog, which ->
+                        dialog.dismiss()
+                        findNavController().navigate(R.id.mainScreen)
+                    })
+                    .setTitle("The file " + jsonReader.FILE_NAME + " could not be read due to an exception")
+                alertDialogBuilder.create().show()
+            }
+            else {
+                val bundle = Bundle()
+                val settings = GameSettings(speed, gridSize)
+                bundle.putParcelable(getString(R.string.bundle_settings), settings)
+                bundle.putParcelableArrayList(getString(R.string.bundle_card_array), jsonReader.memoryCardList)
 
-            findNavController().navigate(R.id.memoryGame, bundle)
+                findNavController().navigate(R.id.memoryGame, bundle)
+            }
         }
     }
 

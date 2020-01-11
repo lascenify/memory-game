@@ -4,6 +4,9 @@
     <string name="bundle_card_array">cardArrayList</string>
     <string name="bundle_settings">settings</string>
     <string name="bundle_game_record">gameRecord</string>
+    <string name="time_tag">Time</string>
+    <string name="points_tag">Points:</string>
+    <string name="shuffle_button_tag">SHUFFLE!</string>
     <array name="grid_sizes">
         <item>Small</item>
         <item>Medium</item>

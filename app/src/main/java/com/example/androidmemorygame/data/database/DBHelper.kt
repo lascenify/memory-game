@@ -16,7 +16,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
     }
 
 
-    lateinit var db: SQLiteDatabase
+    private lateinit var db: SQLiteDatabase
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(GAME_RECORD_SQL_CREATE_ENTRIES)
     }

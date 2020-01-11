@@ -45,13 +45,26 @@ class FinishedGameFragment : Fragment(){
         val bundle = arguments
         if (bundle != null){
             bindViews(bundle, dbHelper)
+            insertRecordOnDatabase(dbHelper)
         }
 
-        val cursor = dbHelper.getAllGameRecordsGivenSettings(gameRecord.gameSettings)
-        val gameRecords = GameRecord.fillGameRecordsFromCursor(cursor)
+        val gameRecords = getGameRecords(dbHelper)
+        setupAdapter(gameRecords)
+        setListeners()
+    }
+
+    private fun setupAdapter(gameRecords: ArrayList<GameRecord>) {
         val adapter = StatisticsRecordAdapter(context!!, gameRecords)
         scoresRecyclerView.adapter = adapter
+    }
 
+    private fun getGameRecords(dbHelper: DBHelper): ArrayList<GameRecord> {
+        val cursor = dbHelper.getAllGameRecordsGivenSettings(gameRecord.gameSettings)
+        val gameRecords = GameRecord.fillGameRecordsFromCursor(cursor)
+        return gameRecords
+    }
+
+    private fun setListeners() {
         restartButton.setOnClickListener {
             findNavController().navigate(R.id.gameSettings)
         }
@@ -67,6 +80,9 @@ class FinishedGameFragment : Fragment(){
         val minutes = seconds / 60
         seconds %= 60
         lastTimeTV.text = String.format("%d:%02d", minutes, seconds)
+    }
+
+    private fun insertRecordOnDatabase(dbHelper: DBHelper) {
         dbHelper.insertGameRecord(gameRecord)
     }
 }

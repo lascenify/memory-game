@@ -1,6 +1,5 @@
 package com.example.androidmemorygame.data
 
-import android.icu.text.CaseMap
 import android.os.Parcel
 import android.os.Parcelable
 

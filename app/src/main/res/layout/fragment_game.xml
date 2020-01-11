@@ -13,29 +13,35 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="10dp"
+                android:layout_alignParentStart="true">
             <TextView
                     android:layout_marginLeft="10dp"
-                    android:text="@string/bundle_time"
+                    android:text="@string/time_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary" app:fontFamily="@font/boogaloo" android:textSize="18sp"/>
+                    android:textColor="@color/colorPrimary"
+                    app:fontFamily="@font/boogaloo"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"/>
             <TextView
                     android:id="@+id/show_chronometer"
                     android:textColor="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bundle_time"
-                    android:layout_marginLeft="5dp"/>
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"/>
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                android:layout_height="wrap_content" android:layout_alignParentRight="true" android:paddingRight="10dp">
             <TextView
                     android:layout_marginLeft="10dp"
-                    android:text="Points:"
+                    android:text="@string/points_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary" android:gravity="right" app:fontFamily="@font/boogaloo"
@@ -58,7 +64,7 @@
             android:numColumns="4"
             android:layout_marginTop="32dp" android:paddingBottom="20dp" android:layout_below="@id/wrap_status"/>
     <Button
-            android:text="SHUFFLE!"
+            android:text="@string/shuffle_button_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/shuffle_button"
             android:layout_alignParentBottom="true"

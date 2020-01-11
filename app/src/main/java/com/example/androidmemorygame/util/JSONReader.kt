@@ -1,35 +1,35 @@
 package com.example.androidmemorygame.util
 
 import android.content.Context
+import android.content.DialogInterface
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import com.example.androidmemorygame.R
 import com.example.androidmemorygame.data.MemoryCard
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.InputStream
 
-class JSONReader () {
-    private val FILE_NAME = "products.json"
+class JSONReader (val context: Context, val gridSize:Int) {
+    val FILE_NAME = "products.json"
     private val PRODUCTS_ARRAY = "products"
     private val PRODUCT_ID = "id"
     private val PRODUCT_TITLE = "title"
     private val PRODUCT_IMAGE = "image"
     private val PRODUCT_IMAGE_SRC = "src"
-
-
-    lateinit var context:Context
-    var gridSize:Int = 0
-    constructor(context: Context, size:Int) : this() {
-        this.context = context
-        this.gridSize = size
-        readJSONFile()
-    }
     var memoryCardList = arrayListOf<MemoryCard>()
 
-    fun readJSONFile(){
+    init {
+        readJSONFile()
+    }
+
+    private fun readJSONFile(){
         try {
             val inputStream: InputStream = context.assets.open(FILE_NAME)
             val inputString = inputStream.bufferedReader().use{it.readText()}
-            val jsonObject: JSONObject = JSONObject(inputString)
+            val jsonObject = JSONObject(inputString)
             val jsonArray: JSONArray = jsonObject.getJSONArray(PRODUCTS_ARRAY)
             for (i in 0 until gridSize){
                 val memoryCardObject = jsonArray.getJSONObject(i)
@@ -41,9 +41,12 @@ class JSONReader () {
                 memoryCardList.add(memoryCard)
                 memoryCardList.add(memoryCard.copy())
             }
+            memoryCardList.shuffle()
         } catch (e:Exception){
             Log.d("JSON Exception", e.toString())
+
         }
-        memoryCardList.shuffle()
+
     }
+
 }
