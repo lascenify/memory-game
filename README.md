@@ -78,3 +78,9 @@ Including Room + Dagger reference [here](https://android.jlelse.eu/repository-la
 - [Picasso](https://square.github.io/picasso/) for image loading 
 - [Google gson](https://github.com/google/gson) used to convert Java Objects into their JSON representation. 
 - [Google Guava](https://github.com/google/guava) to include bidirectional hashmaps. 
+
+## License
+
+Project under GNU General Public License v3.0
+
+Read [LICENSE.MD](https://github.com/lascenify/memory-game/blob/master/LICENSE) for further information.
