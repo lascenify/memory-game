@@ -71,7 +71,7 @@ class SettingsFragment : Fragment(){
             val memoryCardList = jsonReader.memoryCardList
             if (memoryCardList.isNullOrEmpty()){
                 val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(context!!)
-                    .setPositiveButton("ok", DialogInterface.OnClickListener { dialog, which ->
+                    .setPositiveButton("ok", DialogInterface.OnClickListener { dialog, _ ->
                         dialog.dismiss()
                         findNavController().navigate(R.id.mainScreen)
                     })

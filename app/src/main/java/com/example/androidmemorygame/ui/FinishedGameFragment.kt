@@ -44,7 +44,7 @@ class FinishedGameFragment : Fragment(){
 
         val bundle = arguments
         if (bundle != null){
-            bindViews(bundle, dbHelper)
+            bindViews(bundle)
             insertRecordOnDatabase(dbHelper)
         }
 
@@ -70,7 +70,7 @@ class FinishedGameFragment : Fragment(){
         }
     }
 
-    private fun bindViews(bundle: Bundle, dbHelper: DBHelper) {
+    private fun bindViews(bundle: Bundle) {
         gameRecord = bundle.getParcelable(getString(R.string.bundle_game_record))!!
         lastScoreTV.text = gameRecord.points.toString()
         gridSizeTV.text = gameRecord.gameSettings.gridSize.toString() + " (" +SettingsFragment.gridSizes.inverse()[gameRecord.gameSettings.gridSize] + " grid)"
